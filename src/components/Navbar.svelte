@@ -3,7 +3,8 @@
 
     let navItems = [
         { text: "Home", href: "/" },
-        { text: "About", href: "/about" },
+        { text: "Test starten", href: "/test" },
+        { text: "Admin", href: "/admin" },
     ];
 
     onMount(() => {
@@ -13,7 +14,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand text-white" href="/">CSS-Codegenerator Neumann</a>
+        <a class="navbar-brand text-white" href="/">Kommunikationstest</a>
 
         <button
             class="navbar-toggler"
