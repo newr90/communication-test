@@ -4,7 +4,7 @@
     let navItems = [
         { text: "Home", href: "/" },
         { text: "Test starten", href: "/test" },
-        { text: "Admin", href: "/admin" },
+        { text: "Administration", href: "/admin" },
     ];
 
     onMount(() => {
