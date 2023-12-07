@@ -6,7 +6,7 @@
     import EditQuestions from "../../components/EditQuestions.svelte";
     import ViewTests from "../../components/ViewTests.svelte";
 
-    import { Question, Answer, Property } from "$lib/db.js";
+    import { Question, Answer, Property } from "$lib/server/db.js";
 
     let section = "editQuestions";
     let password = "";
