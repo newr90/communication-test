@@ -1,8 +1,13 @@
 <script>
   let currentDate = new Date();
-  let formattedDate = `${
-    currentDate.getMonth() + 1
-  }.${currentDate.getFullYear()}`;
+
+  let month = currentDate.getMonth() + 1;
+  let formattedMonth = (month < 10 ? "0" : "") + month;
+
+  let year = currentDate.getFullYear();
+  let formattedYear = year.toString(); // Ensure the year is represented in four digits
+
+  let formattedDate = `${formattedMonth}.${formattedYear}`;
 </script>
 
 <footer>

@@ -1,5 +1,14 @@
-<h1>Der Test geht los</h1>
+<script>
+    /** @type {import('./$types').PageData} */
+    export let data;
+    console.log(data.questions);
 
-<style>
-    @import "bootstrap/dist/css/bootstrap.min.css";
-</style>
+    // Relocate to /test/1 after 2 seconds
+    setTimeout(function () {
+        window.location.href = "/test/1";
+    }, 2000);
+</script>
+
+<main>
+    <h1>Los gehts mit Situation 1</h1>
+</main>

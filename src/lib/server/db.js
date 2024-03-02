@@ -1,5 +1,5 @@
 import Database from 'better-sqlite3';
-const db = new Database('commtest.db');
+const db = new Database('commtest.sqlite');
 
 class Question {
     static createTable() {
@@ -57,9 +57,9 @@ class Answer {
         return db.prepare('SELECT * FROM answers').all();
     }
 
-    static readAnswerById(answerId) {
-        const query = db.prepare('SELECT * FROM answers WHERE answer_id = ?');
-        return query.get(answerId);
+    static readAnswerById(questionId) {
+        const query = db.prepare('SELECT * FROM answers WHERE question_id = ?');
+        return query.all(questionId);
     }
 
     static updateAnswer(answerId, newAnswerText) {
@@ -115,25 +115,18 @@ Question.createTable();
 Answer.createTable();
 Property.createTable();
 
-const questionResult = Question.createQuestion('Gehen sie auf andere Leute zu?');
+/*const questionResult = Question.createQuestion('Gehen sie auf andere Leute zu?');
 const questionId = questionResult.lastInsertRowid;
 
 const answerResult = Answer.createAnswer(questionId, 'Ja, eigentlich immer');
-const answerId = answerResult.lastInsertRowid;
+const answerId = answerResult.lastInsertRowid;*/
 
-Property.createProperty(answerId, 'Offenheit', 5);
-
-const allQuestions = Question.readAllQuestions();
-const allAnswers = Answer.readAllAnswers();
-const allProperties = Property.readAllProperties();
+/*Property.createProperty(answerId, 'Offenheit', 5);*/
 
 export { Question };
 export { Answer };
 export { Property };
 
-console.log('Alle Fragen:', allQuestions);
-console.log('Alle Antworten:', allAnswers);
-console.log('Alle Eigenschaften:', allProperties);
-
 // Schließe die Datenbankverbindung
-db.close();
+//console.log("Close")
+//db.close();
