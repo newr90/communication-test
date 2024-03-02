@@ -3,7 +3,6 @@
 <script>
     import { sha256 } from "js-sha256";
     import { onMount } from "svelte";
-    import ViewTests from "../../components/ViewTests.svelte";
 
     export let data;
 
@@ -78,12 +77,12 @@
         <h1>Fragen</h1>
         {#each data.questions as question}
             <h5>{question.question_text}</h5>
-            {#each data.answers.filter((answer) => answer.question_id === question.question_id) as answer}
-                <p>{answer.answer_text}</p>
+            {#each data.answers.filter((answer) => answer.question_id === question.question_id) as answer, index (index)}
+                <p>{index + 1}. {answer.answer_text}</p>
             {/each}
         {/each}
     {:else if section === "viewTests"}
-        <ViewTests />
+        Noch keine Tests durchgeführt
     {/if}
 {:else}
     <!-- Benutzer ist nicht authentifiziert, zeige das Login-Formular -->
