@@ -3,10 +3,14 @@
     export let data;
     console.log(data.questions);
 
-    // Relocate to /test/1 after 2 seconds
-    setTimeout(function () {
-        window.location.href = "/test/1";
-    }, 2000);
+    import { onMount } from "svelte";
+
+    onMount(() => {
+        // Relocate to /test/1 after 2 seconds
+        setTimeout(() => {
+            window.location.href = "/test/1";
+        }, 2000);
+    });
 </script>
 
 <main>
