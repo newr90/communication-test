@@ -4,15 +4,20 @@
 </script>
 
 <header>
-<Navbar />
+    <Navbar />
 </header>
-<br/>
+<br />
 <main class="container">
     <slot />
 </main>
-<br/>
-<Footer/>
-<br/><br/><br/>
+<br />
+<Footer />
+<br /><br /><br />
+
 <style>
     @import "bootstrap/dist/css/bootstrap.min.css";
+    p {
+        text-align: justify;
+        width: 100%;
+    }
 </style>

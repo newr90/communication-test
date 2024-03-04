@@ -34,7 +34,7 @@
             selectedAnswer = undefined;
             loadNextQuestion();
         } else {
-            alert("Please select an answer before proceeding.");
+            alert("Bitte wählen Sie eine Antwort aus.");
         }
     };
 
@@ -56,16 +56,18 @@
                         name="answerSelection"
                         bind:group={selectedAnswer}
                         value={answer.answer_id}
-                        class="fs-4"
+                        class="form-check-input"
                     />
                     {answer.answer_text}
                 </label><br /><br />
             {/each}
-            <button on:click={handleAnswerSelection}>Weiter</button>
+            <button on:click={handleAnswerSelection} class="btn btn-primary"
+                >Weiter</button
+            >
         {:else}
-            <p>No answers found for this question.</p>
+            <p>Error: no answer found.</p>
         {/if}
     {:else}
-        <p>No question available.</p>
+        <p>Das war die letzte Frage. Ab zur Auswertung.</p>
     {/if}
 </main>
