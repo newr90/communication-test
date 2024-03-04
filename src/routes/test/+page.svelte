@@ -1,15 +1,23 @@
 <script>
-    /** @type {import('./$types').PageData} */
-    export let data;
-    console.log(data.questions);
+    import { onMount, onDestroy } from "svelte";
 
-    import { onMount } from "svelte";
+    let timeout;
 
     onMount(() => {
         // Relocate to /test/1 after 2 seconds
-        setTimeout(() => {
+        timeout = setTimeout(() => {
             window.location.href = "/test/1";
         }, 2000);
+
+        return () => {
+            // Cleanup the timeout when the component is destroyed
+            clearTimeout(timeout);
+        };
+    });
+
+    onDestroy(() => {
+        // Clear the timeout if the component is unmounted before it triggers
+        clearTimeout(timeout);
     });
 </script>
 

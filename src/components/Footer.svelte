@@ -12,7 +12,7 @@
 
 <footer>
   <div class="container">
-    <p>&copy; Robert Neumann {formattedDate}</p>
+    &copy; Robert Neumann {formattedDate}
   </div>
 </footer>
 

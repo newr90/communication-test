@@ -110,23 +110,36 @@
             <p>
                 Sie neigen aber dazu, ein <strong>Selbstaussageohr</strong> zu haben.
             </p>
-        {:else}
-            <p>Ihre Ergebnisse zeigen eine ausgewogene Verteilung.</p>
         {/if}
     {/if}
 {/if}
 
 <div>
     <label>
-        <input type="radio" bind:group={selectedChartType} value="bar" />
+        <input
+            type="radio"
+            bind:group={selectedChartType}
+            value="bar"
+            class="form-check-input"
+        />
         Balkendiagramm
     </label>
     <label>
-        <input type="radio" bind:group={selectedChartType} value="pie" />
+        <input
+            type="radio"
+            bind:group={selectedChartType}
+            value="pie"
+            class="form-check-input"
+        />
         Kreisdiagramm
     </label>
     <label>
-        <input type="radio" bind:group={selectedChartType} value="radar" />
+        <input
+            type="radio"
+            bind:group={selectedChartType}
+            value="radar"
+            class="form-check-input"
+        />
         Radardiagramm
     </label>
 </div>

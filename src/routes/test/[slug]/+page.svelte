@@ -24,8 +24,8 @@
 
     const loadNextQuestion = () => {
         const nextQuestionId = data.question.question_id + 1;
-        //goto(`/test/${nextQuestionId}`);
-        window.location.href = `/test/${nextQuestionId}`;
+        goto(`/test/${nextQuestionId}`);
+        //window.location.href = `/test/${nextQuestionId}`;
     };
 
     const handleAnswerSelection = () => {
@@ -46,9 +46,9 @@
 
 <main>
     {#if data.question}
-        <h1>
+        <h2>
             <p>{data.question.question_id}. {data.question.question_text}</p>
-        </h1>
+        </h2>
         <br />
         {#if data.answers.length > 0}
             {#each data.answers as answer (answer.answer_id)}
