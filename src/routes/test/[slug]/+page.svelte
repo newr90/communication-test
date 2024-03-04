@@ -50,7 +50,6 @@
         }
         return "";
     }
-    /**/
 </script>
 
 <main>
