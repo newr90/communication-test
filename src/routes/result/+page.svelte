@@ -170,10 +170,3 @@
     abgeschickt hat. Deshalb hilft dieses Modell, Missverständnisse aufzuklären bzw.
     mehr Klarheit in der eigenen Kommunikation zu gewinnen.
 </p>
-
-<style>
-    p {
-        text-align: justify;
-        width: 100%;
-    }
-</style>

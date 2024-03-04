@@ -16,8 +16,5 @@
 
 <style>
     @import "bootstrap/dist/css/bootstrap.min.css";
-    p {
-        text-align: justify;
-        width: 100%;
-    }
+    @import "./globalStyles.css";
 </style>
