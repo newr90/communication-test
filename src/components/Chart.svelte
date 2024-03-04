@@ -46,7 +46,7 @@
 <style>
     div {
         flex: 1; /* Take up available space */
-        max-height: 75vh; /* Set maximum height to 90% of viewport height */
+        max-height: 60vh;
     }
 
     canvas {
