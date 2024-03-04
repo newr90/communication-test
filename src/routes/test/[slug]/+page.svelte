@@ -2,46 +2,55 @@
     import { onMount, afterUpdate } from "svelte";
     import { goto } from "$app/navigation";
 
-    export let data;
+    /** @type {import('./$types').PageLoad} */
 
+    export let data;
     let selectedAnswer;
 
-    const redirectToResult = () => {
-        goto("/result");
-    };
+    onMount(() => {
+        selectedAnswer = getSelectedValue(data.slug);
+    });
 
-    const observeQuestion = () => {
+    afterUpdate(() => {
         if (!data.question) {
-            redirectToResult();
+            // If it's not a question goto result
+            goto("/result");
         }
-    };
-
-    // Call observeQuestion on mount
-    onMount(observeQuestion);
-
-    // Call observeQuestion after each update
-    afterUpdate(observeQuestion);
+    });
 
     const loadNextQuestion = () => {
         const nextQuestionId = data.question.question_id + 1;
         goto(`/test/${nextQuestionId}`);
         //window.location.href = `/test/${nextQuestionId}`;
+        selectedAnswer = getSelectedValue(nextQuestionId);
     };
 
-    const handleAnswerSelection = () => {
+    const handleAnswerSubmit = () => {
         if (selectedAnswer !== undefined) {
-            document.cookie = `question_${data.question.question_id}=${selectedAnswer}; path=/`;
+            document.cookie = `question_${data.question.question_id}=${selectedAnswer}; path=/; SameSite=Strict`;
+            //selectedAnswer = 2;
             selectedAnswer = undefined;
             loadNextQuestion();
         } else {
             alert("Bitte wählen Sie eine Antwort aus.");
         }
     };
+    function getSelectedValue(questionId) {
+        let tempSelected = "";
+        const cookieName = `question_${questionId}`;
+        const cookies = document.cookie.split(";");
 
-    const getCookie = (name) => {
-        const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
-        return match ? match[2] : null;
-    };
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.startsWith(cookieName + "=")) {
+                // Cookie exists, set selectedAnswer to the cookie value
+                tempSelected = cookie.substring(cookieName.length + 1);
+                return parseInt(tempSelected, 10);
+            }
+        }
+        return "";
+    }
+    /**/
 </script>
 
 <main>
@@ -65,9 +74,8 @@
                     </label>
                 </p>
             {/each}
-            <br /><button
-                on:click={handleAnswerSelection}
-                class="btn btn-primary">Weiter</button
+            <br /><button on:click={handleAnswerSubmit} class="btn btn-primary"
+                >Weiter</button
             >
         {:else}
             <p>Error: no answer found.</p>

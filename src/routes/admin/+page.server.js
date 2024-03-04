@@ -1,4 +1,4 @@
-import { Question, Answer, Property } from "$lib/server/db.js";
+import { Question, Answer } from "$lib/server/db.js";
 
 export async function load({ params }) {
     return {

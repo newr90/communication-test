@@ -4,8 +4,8 @@
     import RadarChart from "../../components/RadarChart.svelte";
 
     let chartData = {
-        Sachohr: 6,
-        Beziehungsohr: 2,
+        Sachohr: 7,
+        Beziehungsohr: 1,
         Appellohr: 3,
         Selbstaussageohr: 1,
     };
