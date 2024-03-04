@@ -46,23 +46,28 @@
 
 <main>
     {#if data.question}
-        <h1>{data.question.question_id}. {data.question.question_text}</h1>
+        <h1>
+            <p>{data.question.question_id}. {data.question.question_text}</p>
+        </h1>
         <br />
         {#if data.answers.length > 0}
             {#each data.answers as answer (answer.answer_id)}
-                <label>
-                    <input
-                        type="radio"
-                        name="answerSelection"
-                        bind:group={selectedAnswer}
-                        value={answer.answer_id}
-                        class="form-check-input"
-                    />
-                    {answer.answer_text}
-                </label><br /><br />
+                <p>
+                    <label>
+                        <input
+                            type="radio"
+                            name="answerSelection"
+                            bind:group={selectedAnswer}
+                            value={answer.answer_id}
+                            class="form-check-input"
+                        />
+                        {answer.answer_text}
+                    </label>
+                </p>
             {/each}
-            <button on:click={handleAnswerSelection} class="btn btn-primary"
-                >Weiter</button
+            <br /><button
+                on:click={handleAnswerSelection}
+                class="btn btn-primary">Weiter</button
             >
         {:else}
             <p>Error: no answer found.</p>
