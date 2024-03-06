@@ -6,7 +6,7 @@
         { text: "Test starten", href: "/test" },
         { text: "Teilen", href: "/share" },
         { text: "Administration", href: "/admin" },
-        { text: "Wie funktioniert das?", href: "/how" },
+        { text: "Warum und Wie?", href: "/how" },
     ];
 
     onMount(() => {

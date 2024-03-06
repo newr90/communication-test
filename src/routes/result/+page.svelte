@@ -144,7 +144,7 @@
             value="radar"
             class="form-check-input"
         />
-        Radardiagramm
+        Netzdiagramm
     </label>
 </div>
 

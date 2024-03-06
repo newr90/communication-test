@@ -1,17 +1,23 @@
 <script>
-    import { onMount } from "svelte";
+    import { onMount, afterUpdate } from "svelte";
     import Chart from "chart.js/auto";
 
     export let data;
     export let type = "pie"; // Default to pie chart
 
     let canvas;
+    let chart;
+
+    afterUpdate(() => {
+        chart.data.datasets[0].data = Object.values(data);
+        chart.update();
+    });
 
     onMount(() => {
         const ctx = canvas.getContext("2d");
 
         // Create the chart
-        new Chart(ctx, {
+        chart = new Chart(ctx, {
             type: type,
             data: {
                 labels: Object.keys(data),
