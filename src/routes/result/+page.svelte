@@ -1,8 +1,8 @@
 <script>
     import { onMount, afterUpdate } from "svelte";
-    import Chart from "../../components/Chart.svelte";
-    import PieChart from "../../components/PieChart.svelte";
-    import RadarChart from "../../components/RadarChart.svelte";
+    import Chart from "$lib/comp/Chart.svelte";
+    import PieChart from "$lib/comp/PieChart.svelte";
+    import RadarChart from "$lib/comp/RadarChart.svelte";
 
     let answerCookies = {};
     let result;
@@ -68,6 +68,10 @@
         return result;
     }
 </script>
+
+<svelte:head>
+    <title>Ergebnis</title>
+</svelte:head>
 
 {#if result}
     {#if result.Sachohr && result.Sachohr > 5}
@@ -182,4 +186,9 @@
     Kommunikation) <b>ist, was der Empfänger versteht,</b> nicht, was der Sender
     abgeschickt hat. Deshalb hilft dieses Modell, Missverständnisse aufzuklären bzw.
     mehr Klarheit in der eigenen Kommunikation zu gewinnen.
+</p>
+<p>
+    <a href="/Kommunikationstest.pdf"
+        >Hier finden Sie das PDF, welches Grundlage für diesen Test ist.</a
+    >
 </p>

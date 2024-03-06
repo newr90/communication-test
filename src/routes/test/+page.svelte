@@ -1,18 +1,14 @@
 <script>
     import { onMount, onDestroy } from "svelte";
+    import { goto } from "$app/navigation";
 
     let timeout;
 
     onMount(() => {
         // Relocate to /test/1 after 2 seconds
         timeout = setTimeout(() => {
-            window.location.href = "/test/1";
+            goto("/test/1");
         }, 2000);
-
-        return () => {
-            // Cleanup the timeout when the component is destroyed
-            clearTimeout(timeout);
-        };
     });
 
     onDestroy(() => {
@@ -21,6 +17,9 @@
     });
 </script>
 
+<svelte:head>
+    <title>Der Test startet</title>
+</svelte:head>
 <main>
-    <h1>Los gehts mit Situation 1</h1>
+    <h1>Es geht los mit Situation 1.</h1>
 </main>

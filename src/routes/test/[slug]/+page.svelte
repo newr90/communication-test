@@ -24,12 +24,12 @@
         //window.location.href = `/test/${nextQuestionId}`;
         selectedAnswer = getSelectedValue(nextQuestionId);
     };
-
     const handleAnswerSubmit = () => {
-        if (selectedAnswer !== undefined) {
+        console.log(typeof selectedAnswer, selectedAnswer);
+        if (typeof selectedAnswer == "number" && !isNaN(selectedAnswer)) {
             document.cookie = `question_${data.question.question_id}=${selectedAnswer}; path=/; SameSite=Strict`;
             //selectedAnswer = 2;
-            selectedAnswer = undefined;
+            selectedAnswer = NaN;
             loadNextQuestion();
         } else {
             alert("Bitte wählen Sie eine Antwort aus.");
@@ -51,6 +51,14 @@
         return "";
     }
 </script>
+
+<svelte:head>
+    {#if data.question}
+        <title>{data.question.question_id} - Kommunikationstest</title>
+    {:else}
+        <title>Kommunikationstest</title>
+    {/if}
+</svelte:head>
 
 <main>
     {#if data.question}

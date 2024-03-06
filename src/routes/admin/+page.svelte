@@ -14,13 +14,12 @@
     let isAuthenticated = false;
 
     function handleLogin() {
-        const hardcodedPasswordHash =
-            "9bba5c53a0545e0c80184b946153c9f58387e3bd1d4ee35740f29ac2e718b019"; // Hier sollte der vorher gehashte Wert gespeichert sein
+        const hardcodedPasswordHash = data.code; // Hier sollte der vorher gehashte Wert gespeichert sein
         const hashedPassword = sha256(password);
 
         if (hashedPassword === hardcodedPasswordHash) {
             // Passwort ist korrekt
-            document.cookie = `auth=${hashedPassword}; path=/`;
+            document.cookie = `auth=${hashedPassword}; path=/;  SameSite=Strict`;
             isAuthenticated = true;
         } else {
             errorMessage = "Falsches Passwort";
@@ -54,6 +53,10 @@
         section = newSection;
     }
 </script>
+
+<svelte:head>
+    <title>Administration</title>
+</svelte:head>
 
 <h1>Administration</h1>
 {#if isAuthenticated}

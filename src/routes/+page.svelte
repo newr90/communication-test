@@ -1,3 +1,7 @@
+<svelte:head>
+    <title>Willkommen</title>
+</svelte:head>
+
 <h1>Willkommen zum Kommunikationstest</h1>
 <br />
 <p>
