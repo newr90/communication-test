@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .table {
+            border-collapse: collapse;
+        }
+
+        .table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        .line {
+            border-left: 1px solid black;
+            height: 100px;
+            /* Adjust the height as needed */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <table class="table">
+            <tr>
+                <th>questions</th>
+            </tr>
+            <tr>
+                <td>
+                    question_id (PK)<br>
+                    question_text
+                </td>
+            </tr>
+        </table>
+
+        <div class="line"></div>
+
+        <table class="table">
+            <tr>
+                <th>answers</th>
+            </tr>
+            <tr>
+                <td>
+                    answer_id (PK)<br>
+                    question_id (FK)<br>
+                    answer_text
+                </td>
+            </tr>
+        </table>
+
+        <div class="line"></div>
+
+        <table class="table">
+            <tr>
+                <th>properties</th>
+            </tr>
+            <tr>
+                <td>
+                    answer_id (FK)<br>
+                    property_name<br>
+                    property_value
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
