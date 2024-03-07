@@ -26,6 +26,10 @@
     Daten werden <b>Cookies</b> (für die gegebenen Antworten) und eine
     <b>SQLite-Datenbank</b> (für Fragen, Antworten und Eigenschaften) verwendet.<br
     /><br />
+    <a href="/Handzettel.pdf"
+        >Hier gibt's techniche Details im <b>Handzettel</b> für das Softwaretechnik-Referat
+        (npm Befehle / Server-Client Kommunkation / Nginx-proxy)
+    </a><br /><br />
     Die <b>Module</b> sind:<br />
     - chart.js <a href="/testchart">Beispielcharts (Livefunktion)</a><br />
     - bootstrap<br />
@@ -35,8 +39,16 @@
 <h4>Programmablaufplan</h4>
 <p>
     <img
-        src="Ablaufplan.drawio.png"
+        src="/Ablaufplan.drawio.png"
         alt="PAP"
         style="max-width:485px; width:100%"
+    />
+</p>
+<h4>Die Datenbank (SQLite)</h4>
+<p>
+    <img
+        src="/db.drawio.png"
+        alt="Datebank"
+        style="max-width:662px; width:100%"
     />
 </p>

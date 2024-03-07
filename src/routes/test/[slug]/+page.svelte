@@ -2,9 +2,10 @@
     import { onMount, afterUpdate } from "svelte";
     import { goto } from "$app/navigation";
 
-    /** @type {import('./$types').PageLoad} */
+    /** @type {import('./$types').PageServerLoad} */
 
     export let data;
+
     let selectedAnswer;
 
     onMount(() => {

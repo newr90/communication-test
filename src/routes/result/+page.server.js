@@ -1,4 +1,4 @@
-import { Property } from '../../lib/server/db.js';
+import { Property } from '$lib/server/db.js';
 
 export async function load({ }) {
     return {
