@@ -1,5 +1,5 @@
 <script>
-    import { onMount, afterUpdate } from "svelte";
+    import { onMount } from "svelte";
     import Chart from "$lib/comp/Chart.svelte";
     import PieChart from "$lib/comp/PieChart.svelte";
     import RadarChart from "$lib/comp/RadarChart.svelte";
@@ -33,11 +33,11 @@
         result = createPropertyObject(data.properties, answerCookies);
     });
 
-    function createPropertyObject(dataArray, givenAnswers) {
+    function createPropertyObject(properties, givenAnswers) {
         const result = {};
 
         // Initialize all properties to 0
-        dataArray.forEach((obj) => {
+        properties.forEach((obj) => {
             if (obj.property_name) {
                 result[obj.property_name] = 0;
             }
@@ -46,25 +46,28 @@
         for (const questionId in givenAnswers) {
             const answerId = parseInt(givenAnswers[questionId]);
 
-            // Find the corresponding object in dataArray
-            const matchingObject = dataArray.find(
+            // Filter the properties array to find the matching object(s)
+            const matchingObjects = properties.filter(
                 (obj) => obj.answer_id === answerId,
             );
 
             // Create or update the property in the result object
-            if (matchingObject && matchingObject.property_name) {
-                const propertyName = matchingObject.property_name;
+            matchingObjects.forEach((matchingObject) => {
+                if (matchingObject.property_name) {
+                    const propertyName = matchingObject.property_name;
 
-                // Initialize the property in the result object if it doesn't exist
-                if (!result.hasOwnProperty(propertyName)) {
-                    result[propertyName] = 0;
+                    // Initialize the property in the result object if it doesn't exist
+                    // Isn't needed (lines 40-44)
+                    if (!result.hasOwnProperty(propertyName)) {
+                        result[propertyName] = 0;
+                    }
+
+                    // Increase the value based on the property_value in matchingObject
+                    result[propertyName] += matchingObject.property_value;
                 }
-
-                // Increase the value based on the property_value in matchingObject
-                result[propertyName] += matchingObject.property_value;
-            }
+            });
         }
-
+        console.log(result);
         return result;
     }
 </script>

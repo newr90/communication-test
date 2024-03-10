@@ -34,7 +34,11 @@
     - chart.js <a href="/testchart">Beispielcharts (Livefunktion)</a><br />
     - bootstrap<br />
     - <a href="https://svelte-put.vnphanquang.com/docs/qr">@svelte-put/qr</a><br
-    />
+    /><br />
+    Der Quelltext ist auf Github zu finden:
+    <a href="https://github.com/newr90/communication-test"
+        >Communication-test@github</a
+    >
 </p>
 <h4>Programmablaufplan</h4>
 <p>

@@ -21,5 +21,5 @@
     <title>Der Test startet</title>
 </svelte:head>
 <main>
-    <h1>Es geht los mit Situation 1.</h1>
+    <h1>Der Test startet. Viel Erfolg!</h1>
 </main>
