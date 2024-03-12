@@ -184,6 +184,15 @@
     „Was soll ich tun/denken/fühlen aufgrund dieser Botschaft?“
 </p>
 <p>
+    <center
+        ><img
+            src="/Ebenen.png"
+            alt="Empfangsebenen"
+            style="max-width:592px; width:100%"
+        /></center
+    >
+</p>
+<p>
     Der Empfänger „entscheidet selbst“ (nicht immer bewusst), auf welchem „Ohr“
     er/sie gerade hören will. <b>„Wahr“</b> (d.h. entscheidend für die weitere
     Kommunikation) <b>ist, was der Empfänger versteht,</b> nicht, was der Sender
