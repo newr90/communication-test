@@ -31,8 +31,9 @@
         (npm Befehle / Server-Client Kommunkation / Nginx-proxy)
     </a><br /><br />
     Die <b>Module</b> sind:<br />
+    - better-sqlite3 (Datenbankanbindung)<br />
     - chart.js <a href="/testchart">Beispielcharts (Livefunktion)</a><br />
-    - bootstrap<br />
+    - bootstrap (Design)<br />
     - <a href="https://svelte-put.vnphanquang.com/docs/qr">@svelte-put/qr</a><br
     /><br />
     Der Quelltext ist auf Github zu finden:
